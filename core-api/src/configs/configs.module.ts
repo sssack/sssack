@@ -25,6 +25,7 @@ const validateConfigObject = (envConfig: Record<string, any>) => {
   checkNodes(fullConfig);
   return envConfig;
 };
+
 @Global()
 @Module({
   imports: [

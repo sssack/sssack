@@ -4,9 +4,10 @@ import { HealthController } from './health.controller';
 import { CommonModule } from '@common/common.module';
 import { RequestLoggerInterceptor } from '@libs/interceptors';
 import { ConfigsModule } from '@configs';
+import { DatabasesModule } from '@databases';
 
 @Module({
-  imports: [CommonModule, ConfigsModule],
+  imports: [CommonModule, ConfigsModule, DatabasesModule],
   controllers: [HealthController],
   providers: [
     {

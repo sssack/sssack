@@ -24,7 +24,8 @@
 
     "paths": {
       "@libs/*": ["libs/*"],
-      "@common/*": ["common/*"]
+      "@common/*": ["common/*"],
+      "@configs": ["configs"]
     }
   }
 }

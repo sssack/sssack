@@ -27,7 +27,8 @@
       "@common/*": ["common/*"],
       "@configs": ["configs"],
       "@databases": ["databases"],
-      "@middlewares": ["middlewares"]
+      "@middlewares": ["middlewares"],
+      "@services/*": ["services/*"]
     }
   }
 }

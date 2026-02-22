@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
-import { DataSourceOptions } from 'typeorm';
+import type { DataSourceOptions } from 'typeorm';
+import type { RedisOptions } from 'ioredis';
 
 @Injectable()
 export class ConfigsService {
@@ -20,5 +21,9 @@ export class ConfigsService {
 
   get mysql(): DataSourceOptions {
     return this.configService.get<DataSourceOptions>('mysql')!;
+  }
+
+  get redis(): RedisOptions {
+    return this.configService.get<RedisOptions>('redis')!;
   }
 }

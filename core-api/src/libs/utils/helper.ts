@@ -37,14 +37,3 @@ export function stripUndefined<T>(obj: StrippableWhere<T>): StrictFindOptionsWhe
 export function generateId() {
   return customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 10)();
 }
-
-// 🛠️ 가장 깊은 곳에 숨어있는 첫 번째 에러 메시지를 찾아내는 재귀 함수
-export const getFirstErrorMessage = (error: ValidationError): string => {
-  if (error.constraints) {
-    return Object.values(error.constraints)[0];
-  }
-  if (error.children && error.children.length > 0) {
-    return getFirstErrorMessage(error.children[0]);
-  }
-  return '잘못된 요청입니다.';
-};

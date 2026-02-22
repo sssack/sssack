@@ -26,7 +26,8 @@
       "@libs/*": ["libs/*"],
       "@common/*": ["common/*"],
       "@configs": ["configs"],
-      "@databases": ["databases"]
+      "@databases": ["databases"],
+      "@middlewares": ["middlewares"]
     }
   }
 }

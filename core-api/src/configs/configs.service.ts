@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
 import type { DataSourceOptions } from 'typeorm';
 import type { RedisOptions } from 'ioredis';
+import type { JwtConfig } from './configuration';
 
 @Injectable()
 export class ConfigsService {
@@ -25,5 +26,9 @@ export class ConfigsService {
 
   get redis(): RedisOptions {
     return this.configService.get<RedisOptions>('redis')!;
+  }
+
+  get jwt() {
+    return this.configService.get<JwtConfig>('jwt')!;
   }
 }

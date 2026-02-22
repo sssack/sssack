@@ -7,7 +7,7 @@ import { convertOptions, stripUndefined, TypeormRelationOptions } from '@libs/ut
 export class UserRepository extends DddRepository<User> {
   entityClass = User;
 
-  async find(conditions: { id?: number; username?: string }, options?: TypeormRelationOptions<User>) {
+  async find(conditions: { id?: string; username?: string }, options?: TypeormRelationOptions<User>) {
     return await this.entityManager.find(this.entityClass, {
       where: stripUndefined({
         id: conditions.id,
@@ -17,7 +17,7 @@ export class UserRepository extends DddRepository<User> {
     });
   }
 
-  async count(conditions: { id?: number; username?: string }) {
+  async count(conditions: { id?: string; username?: string }) {
     return await this.entityManager.count(this.entityClass, {
       where: stripUndefined({
         id: conditions.id,

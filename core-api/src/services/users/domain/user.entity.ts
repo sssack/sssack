@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { DddAggregate } from '@libs/ddd';
+import { generateId } from '../../../libs/utils';
 
 interface Ctor {
   username: string;
@@ -8,8 +9,8 @@ interface Ctor {
 
 @Entity()
 export class User extends DddAggregate {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn()
+  id: string;
 
   @Column({ unique: true })
   username: string;
@@ -21,6 +22,7 @@ export class User extends DddAggregate {
     super();
 
     if (args) {
+      this.id = generateId();
       this.username = args.username;
       this.password = args.password;
     }
